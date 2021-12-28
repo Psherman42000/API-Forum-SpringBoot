@@ -22,6 +22,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 @Entity
+@NoArgsConstructor
 public class Topico {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,5 +38,11 @@ public class Topico {
 	private Curso curso;
 	@OneToMany(mappedBy = "topico")
 	private List<Resposta> respostas = new ArrayList<>();
+
+	public Topico (String titulo, String mensagem, Curso curso){
+		this.titulo = titulo;
+		this.mensagem = mensagem;
+		this.curso = curso;
+	}
 
 }

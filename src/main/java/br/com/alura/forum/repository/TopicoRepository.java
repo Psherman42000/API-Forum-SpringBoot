@@ -14,5 +14,4 @@ public interface TopicoRepository extends JpaRepository<Topico, Long>{
 
     @Query("SELECT topico FROM Topico topico WHERE titulo = :titulo")
     List<Topico> findTheId(@Param("titulo")String titulo);
-    
 }
